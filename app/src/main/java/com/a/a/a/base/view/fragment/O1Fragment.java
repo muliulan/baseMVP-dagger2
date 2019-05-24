@@ -1,16 +1,12 @@
 package com.a.a.a.base.view.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.a.a.a.base.Cezz;
 import com.a.a.a.base.R;
 import com.a.a.a.base.base.BaseFragment;
-import com.a.a.a.base.dagger2.LoginPresenter;
-
-import javax.inject.Inject;
+import com.a.a.a.base.presenter.LoginPresenter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -22,8 +18,6 @@ import butterknife.OnClick;
 public class O1Fragment extends BaseFragment<LoginPresenter> {
     @BindView(R.id.text)
     TextView text;
-    @Inject
-    Cezz c;
 
     @Override
     public int getLayout() {
@@ -40,12 +34,6 @@ public class O1Fragment extends BaseFragment<LoginPresenter> {
 
         if(mPresenter!=null){
             mPresenter.login(null);
-        }
-        if(c==null){
-            Log.e("dddddddddd","aa");
-        }else{
-            Log.e("dddddddddd","aa1111");
-
         }
 
         text.setText(String.valueOf(11));

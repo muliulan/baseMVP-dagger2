@@ -3,7 +3,7 @@ package com.a.a.a.base.dagger2.Module;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 
-import com.a.a.a.base.dagger2.FragmentScope;
+import com.a.a.a.base.dagger2.scope.FragmentScope;
 
 import dagger.Module;
 import dagger.Provides;

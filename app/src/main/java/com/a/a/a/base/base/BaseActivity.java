@@ -1,62 +1,60 @@
 package com.a.a.a.base.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.a.a.a.base.MyApplication;
-import com.a.a.a.base.base.Interface.IPresenter;
-import com.a.a.a.base.base.Interface.IView;
-import com.a.a.a.base.dagger2.Component.ActivityComponent;
-import com.a.a.a.base.dagger2.Component.DaggerActivityComponent;
-import com.a.a.a.base.dagger2.Module.ActivityModule;
-
-import javax.inject.Inject;
+import com.a.a.a.base.R;
 
 import butterknife.ButterKnife;
 
-
 /**
- * Created by zcs on 2018/3/27 0027.
+ * Created by Administrator on 2019/5/21 0021.
  */
 
-public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IView {
-
-    @Inject
-    public P mPresenter;//presenter对象
-    @Inject
-    public MyApplication mContext;
+public class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayout());
         ButterKnife.bind(this);
-        initInject();
-        if(mPresenter!=null){
-            mPresenter.attachView(this);
+        setOnclick();
+    }
+    public void setOnclick(){
+        View image_lift = findViewById(R.id.image_lift);
+        if(image_lift!=null){
+            image_lift.setOnClickListener(this);
         }
-        initView(savedInstanceState);
+    }
+    public void setImage(int resId ,int type){
+        ImageView image_lift = findViewById(R.id.image_lift);
+        ImageView image_right = findViewById(R.id.image_right);
+        if(image_lift!=null && type==1){
+            image_lift.setImageResource(resId);
+        }if(image_right!=null && type==2){
+            image_right.setImageResource(resId);
+        }
     }
 
-    protected ActivityComponent getActivityComponent(){
-       return DaggerActivityComponent.builder()
-               .appComponent(MyApplication.getAppComponent())
-               .activityModule(new ActivityModule(this))
-                .build();
+    public void setTitle(String text,int type){
+        TextView title = findViewById(R.id.title);
+        TextView right_title = findViewById(R.id.right_title);
+        if(title!=null && type==1){
+            title.setText(text);
+        }if(right_title!=null && type==2){
+            right_title.setText(text);
+        }
     }
 
     @Override
-    public Activity getContext() {
-        return this;
-    }
-
-    @Override
-    protected void onDestroy() {
-        if(mPresenter!=null){
-            mPresenter.detachView();
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.image_lift:
+                finish();
+                break;
         }
-        super.onDestroy();
     }
 }

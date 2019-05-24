@@ -7,34 +7,38 @@ import java.io.Serializable;
  */
 
 public class User implements Serializable {
-    private int id;
-    private String userName;
-    private String pwd;
+    /**
+     * reason : 鎺ュ彛鍦板潃涓嶅瓨鍦�
+     * result : null
+     * error_code : 10022
+     */
 
-    public int getId() {
-        return id;
+    private String reason;
+    private Object result;
+    private int error_code;
+
+    public String getReason() {
+        return reason;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
-    public String getUserName() {
-        return userName;
+    public Object getResult() {
+        return result;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setResult(Object result) {
+        this.result = result;
     }
 
-    public String getPwd() {
-        return pwd;
+    public int getError_code() {
+        return error_code;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setError_code(int error_code) {
+        this.error_code = error_code;
     }
-
-
 }
 

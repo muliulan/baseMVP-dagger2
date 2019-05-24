@@ -12,17 +12,9 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = AppModule.class)
+@Component(modules = {AppModule.class})
 public interface AppComponent {
 
     MyApplication getContext();  // 提供App的Context
-
-//    DataManager getDataManager(); //数据中心
-//
-//    RetrofitHelper retrofitHelper();  //提供http的帮助类
-//
-//    RealmHelper realmHelper();    //提供数据库帮助类
-//
-//    ImplPreferencesHelper preferencesHelper(); //提供sp帮助类
 }
 

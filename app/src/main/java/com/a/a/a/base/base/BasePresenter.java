@@ -1,9 +1,10 @@
 package com.a.a.a.base.base;
 
-import android.content.Context;
-
 import com.a.a.a.base.base.Interface.IPresenter;
 import com.a.a.a.base.base.Interface.IView;
+import com.alibaba.fastjson.JSON;
+
+import java.util.List;
 
 /**
  * Created by zcs on 2018/3/27 0027.
@@ -11,39 +12,26 @@ import com.a.a.a.base.base.Interface.IView;
 
 public abstract class BasePresenter<V extends IView> implements IPresenter <V> {
 
-    public Context mContext;
-    public V iView;
+    protected V mView;
 
     @Override
     public void attachView(V view) {
-        this.iView = view;
-        mContext=this.iView.getContext();
+        this.mView = view;
     }
 
     @Override
     public void detachView() {
-        this.iView = null;
+        this.mView = null;
+    }
+
+    public static <T>T getJsonList(String json,Class<T> c){
+        List<T> parseArray = JSON.parseArray(json,c);
+        return (T) parseArray;
+    }
+
+    public static <T>T getEntity(String json,Class<T> c){
+        return JSON.parseObject(json, c);
     }
 
 
-
-//    public Reference<T> vIn;
-//    public void  attachView(T in){
-//        vIn = new WeakReference<>(in);
-//    }
-//    public boolean isViewAttached(){
-//        return  vIn !=null && vIn.get() !=null;
-//    }
-//    public T getViewIn(){
-//        if( isViewAttached()){
-//            return vIn.get();
-//        }
-//        return null;
-//    }
-//    public  void detachView(){
-//        if(vIn!=null){
-//            vIn.clear();
-//            vIn =null;
-//        }
-//    }
 }

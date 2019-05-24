@@ -2,7 +2,7 @@ package com.a.a.a.base.dagger2.Module;
 
 import android.app.Activity;
 
-import com.a.a.a.base.dagger2.ActivityScope;
+import com.a.a.a.base.dagger2.scope.ActivityScope;
 
 import dagger.Module;
 import dagger.Provides;

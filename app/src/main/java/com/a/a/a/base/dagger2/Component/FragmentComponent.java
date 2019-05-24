@@ -1,6 +1,6 @@
 package com.a.a.a.base.dagger2.Component;
 
-import com.a.a.a.base.dagger2.FragmentScope;
+import com.a.a.a.base.dagger2.scope.FragmentScope;
 import com.a.a.a.base.dagger2.Module.FragmentModule;
 import com.a.a.a.base.view.fragment.O1Fragment;
 

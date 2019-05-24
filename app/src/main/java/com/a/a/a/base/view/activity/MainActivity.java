@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
-import com.a.a.a.base.Interface.MainInterface;
+import com.a.a.a.base.Interface.MainContract;
 import com.a.a.a.base.R;
-import com.a.a.a.base.base.BaseActivity;
-import com.a.a.a.base.dagger2.MyP;
+import com.a.a.a.base.base.MvpActivity;
 import com.a.a.a.base.entity.TabEntity;
+import com.a.a.a.base.presenter.MainPresenter;
 import com.a.a.a.base.view.fragment.O1Fragment;
 import com.a.a.a.base.view.fragment.O2Fragment;
 import com.a.a.a.base.view.fragment.O3Fragment;
@@ -18,7 +18,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseActivity<MyP>implements MainInterface {
+public class MainActivity extends MvpActivity<MainPresenter> implements MainContract.View {
 
     private String[] mTitles = {"首页", "消息", "联系人", "更多"};
     private int[] mIconUnselectIds = {
@@ -42,13 +42,11 @@ public class MainActivity extends BaseActivity<MyP>implements MainInterface {
 
     @Override
     public void initView(Bundle savedInstanceState) {
-
-
-        mPresenter.I_P();
         mPresenter.asd();
-        if(mContext!=null){
-            Log.e("mll","mc buwei");
-        }
+        mPresenter.presenter();
+//        if(mlist!=null){
+//            Log.e("mll","mlist");
+//        }
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));

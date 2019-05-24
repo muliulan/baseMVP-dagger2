@@ -1,4 +1,4 @@
-package com.a.a.a.base.dagger2;
+package com.a.a.a.base.presenter;
 
 import android.util.Log;
 
@@ -12,7 +12,6 @@ import javax.inject.Inject;
  */
 
 public class LoginPresenter extends BasePresenter {
-    ICommonView iView;
     private int a;
 
     @Inject

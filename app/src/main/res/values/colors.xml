@@ -3,4 +3,32 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--base_top-->
+    <color name="color_1D13D7">#1D13D7</color>
+    <!--半透明-->
+    <color name="transparency_100">#ff000000</color>
+    <color name="transparency_95">#f2000000</color>
+    <color name="transparency_90">#e6000000</color>
+    <color name="transparency_85">#d9000000</color>
+    <color name="transparency_80">#cc000000</color>
+    <color name="transparency_75">#bf000000</color>
+    <color name="transparency_70">#b3000000</color>
+    <color name="transparency_65">#a6000000</color>
+    <color name="transparency_60">#99000000</color>
+    <color name="transparency_55">#8c000000</color>
+    <color name="transparency_50">#80000000</color>
+    <color name="transparency_45">#73000000</color>
+    <color name="transparency_40">#66000000</color>
+    <color name="transparency_35">#59000000</color>
+    <color name="transparency_30">#4d000000</color>
+    <color name="transparency_25">#40000000</color>
+    <color name="transparency_20">#33000000</color>
+    <color name="transparency_15">#26000000</color>
+    <color name="transparency_10">#1a000000</color>
+    <color name="transparency_5">#0d000000</color>
+    <color name="transparency_0">#00000000</color>
+
+
+
 </resources>
