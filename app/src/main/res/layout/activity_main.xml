@@ -26,4 +26,9 @@
         tl:tl_textsize="12sp"
         tl:tl_underline_color="#DDDDDD"
         tl:tl_underline_height="1dp"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/colorAccent"/>
 </RelativeLayout>

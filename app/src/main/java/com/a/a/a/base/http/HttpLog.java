@@ -1,9 +1,8 @@
-package com.a.a.a.base.http.text;
+package com.a.a.a.base.http;
 
 import android.graphics.Bitmap;
 import android.util.Log;
 
-import com.a.a.a.base.http.Convert;
 import com.lzy.okgo.model.Response;
 
 import java.io.File;

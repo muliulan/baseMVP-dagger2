@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.view.Window;
 
-import com.a.a.a.base.http.text.HttpLog;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
 

@@ -13,6 +13,8 @@ import com.a.a.a.base.dagger2.Module.ActivityModule;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Created by zcs on 2018/3/27 0027.
@@ -29,6 +31,7 @@ public abstract class MvpActivity<P extends IPresenter> extends BaseActivity imp
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
+        ButterKnife.bind(this);
         initInject();
         if(mPresenter!=null){
             mPresenter.attachView(this);
