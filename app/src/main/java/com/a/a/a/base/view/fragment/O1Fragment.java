@@ -33,7 +33,7 @@ public class O1Fragment extends BaseFragment<LoginPresenter> {
     public void initView(Bundle savedInstanceState) {
 
         if(mPresenter!=null){
-            mPresenter.login(null);
+            mPresenter.login();
         }
 
         text.setText(String.valueOf(11));

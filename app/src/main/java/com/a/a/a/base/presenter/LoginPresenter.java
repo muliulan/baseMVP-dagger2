@@ -3,7 +3,6 @@ package com.a.a.a.base.presenter;
 import android.util.Log;
 
 import com.a.a.a.base.base.BasePresenter;
-import com.a.a.a.base.entity.User;
 
 import javax.inject.Inject;
 
@@ -23,7 +22,7 @@ public class LoginPresenter extends BasePresenter {
 //        this.a = a;
 //    }
 
-    public void login(User user){
+    public void login( ){
         Log.e("mlldddddddddd","dddddd"+a);
     }
 }

@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -8,7 +10,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
         multiDexEnabled true
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
     signingConfigs {
         release {
@@ -24,7 +31,15 @@ android {
             minifyEnabled true
             // true - 打开资源压缩
             shrinkResources true
+            //Zipalign优化
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${variant.productFlavors[0].name}_${defaultConfig.versionName}.apk"
+                }
+            }
         }
     }
 
@@ -36,6 +51,16 @@ android {
         abortOnError false
     }
     sourceSets.main.jniLibs.srcDirs = ['libs']
+
+    productFlavors {
+        mingzi { buildConfigField "String", "ENVIRONMENT", '"baidu"' }//BuildConfig.ENVIRONMENT
+
+    }
+}
+greendao {
+    schemaVersion 1
+    daoPackage android.defaultConfig.applicationId+".greendao"
+    targetGenDir 'src/main/java'
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -67,6 +92,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
     //fastjson
     compile 'com.alibaba:fastjson:1.2.57'
-
+    //greendao
+    compile 'org.greenrobot:greendao:3.2.2'
 
 }
