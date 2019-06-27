@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.a.a.a.base.R;
+import com.a.a.a.base.view.activity.ActivityCollector;
 
 import butterknife.ButterKnife;
 
@@ -17,11 +18,24 @@ import butterknife.ButterKnife;
 
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private ActivityCollector appManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        appManager = ActivityCollector.getAppManager();
+        appManager.addActivity(this);
         setOnclick();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(appManager!=null){
+            appManager.removeActivity(this);
+        }
+    }
+
     public void setOnclick(){
         View image_lift = findViewById(R.id.image_lift);
         if(image_lift!=null){
