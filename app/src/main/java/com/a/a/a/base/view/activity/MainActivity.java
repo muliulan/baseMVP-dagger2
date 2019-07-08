@@ -32,9 +32,7 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainCont
                 ToastUtils.showShort("点击了");
                 break;
         }
-
     }
-
 
     private String[] mTitles = {"首页", "消息", "联系人", "更多"};
     private int[] mIconUnselectIds = {
@@ -58,6 +56,9 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainCont
 
     @Override
     public void initView(Bundle savedInstanceState) {
+
+
+        Log.e("mll","----------------------------------");
 
         mPresenter.asd();
         mPresenter.presenter();

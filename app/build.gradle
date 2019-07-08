@@ -60,7 +60,7 @@ android {
     }
 }
 greendao {
-    schemaVersion 1
+    schemaVersion rootProject.ext.greendao.schemaVersion
     daoPackage android.defaultConfig.applicationId + ".greendao"
     targetGenDir 'src/main/java'
 }

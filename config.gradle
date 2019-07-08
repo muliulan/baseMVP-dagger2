@@ -9,7 +9,9 @@ ext{
             applicationId       : "com.a.a.a.base",
             testInstrumentationRunner : "android.support.test.runner.AndroidJUnitRunner"
     ]
-
+    greendao =[
+            schemaVersion : 1
+    ]
     def v4_version="23.1.1"
     def v7_version="26.0.0"
     def multidex_version="1.0.1"
