@@ -1,0 +1,55 @@
+ext{
+
+    android = [
+            compileSdkVersion   : 26,
+            minSdkVersion       : 19,
+            targetSdkVersion    : 26,
+            versionCode         : 1,
+            versionName         : "1.0.0",
+            applicationId       : "com.a.a.a.base",
+            testInstrumentationRunner : "android.support.test.runner.AndroidJUnitRunner"
+    ]
+
+    def v4_version="23.1.1"
+    def v7_version="26.0.0"
+    def multidex_version="1.0.1"
+    def glide_version="3.7.0"
+    def dagger2_version="2.19"
+    def dagger2_compiler_version="2.19"
+    def flycotablayout_version="2.4.0"
+    def utilcode_version="1.23.7"
+    def xrecyclerview_version="1.5.9"
+    def okgo_version="3.0.4"
+    def butterknife_version="8.6.0"
+    def fastjson_version="1.2.57"
+    def greendao_version="3.2.2"
+
+    dependencies = [
+            v7  : 'com.android.support:appcompat-v7:'+v7_version,
+            v4  : 'com.android.support:support-v4:'+v4_version,
+            multidex        : 'com.android.support:multidex:'+multidex_version,
+            recyclerview    : 'com.android.support:recyclerview-v7:'+v7_version,
+            //图片加载
+            glide   : 'com.github.bumptech.glide:glide:'+glide_version,
+            //dagger2
+            dagger2             : "com.google.dagger:dagger:"+dagger2_version,
+            dagger2_compiler    : "com.google.dagger:dagger-compiler:"+dagger2_compiler_version,
+            //**FlycoTabLayout(https://github.com/H07000223/FlycoTabLayout)
+            flycotablayout          : 'com.nineoldandroids:library:'+flycotablayout_version,
+            flycoroundview_lib      : 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar',
+            flycotablayout_lib      : 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar',
+            //**工具类(https://github.com/Blankj/AndroidUtilCode)
+            utilcode    : 'com.blankj:utilcode:'+utilcode_version,
+            //recyclerView(https://github.com/XRecyclerView/XRecyclerView)
+            xrecyclerview   : 'com.jcodecraeer:xrecyclerview:'+xrecyclerview_version,
+            //**网络请求 okgo(https://github.com/jeasonlzy/okhttp-OkGo)
+            okgo    : 'com.lzy.net:okgo:'+okgo_version,
+            //**黄油刀(https://github.com/JakeWharton/butterknife)
+            butterknife : 'com.jakewharton:butterknife:'+butterknife_version,
+            butterknife_compiler : 'com.jakewharton:butterknife-compiler:'+butterknife_version,
+            //fastjson
+            fastjson    : 'com.alibaba:fastjson:'+fastjson_version,
+            //greendao
+            greendao    : 'org.greenrobot:greendao:'+greendao_version
+    ]
+}
