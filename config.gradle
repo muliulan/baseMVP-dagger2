@@ -25,6 +25,7 @@ ext{
     def butterknife_version="8.6.0"
     def fastjson_version="1.2.57"
     def greendao_version="3.2.2"
+    def jsbridge_version="1.0.4"
 
     dependencies = [
             v7  : 'com.android.support:appcompat-v7:'+v7_version,
@@ -52,6 +53,9 @@ ext{
             //fastjson
             fastjson    : 'com.alibaba:fastjson:'+fastjson_version,
             //greendao
-            greendao    : 'org.greenrobot:greendao:'+greendao_version
+            greendao    : 'org.greenrobot:greendao:'+greendao_version,
+            //js交互webview(https://github.com/lzyzsd/JsBridge)
+            jsbridge    : 'com.github.lzyzsd:jsbridge:'+jsbridge_version
+
     ]
 }

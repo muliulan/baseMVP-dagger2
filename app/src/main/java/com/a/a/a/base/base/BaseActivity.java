@@ -8,9 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.a.a.a.base.R;
-import com.a.a.a.base.view.activity.ActivityCollector;
-
-import butterknife.ButterKnife;
+import com.a.a.a.base.utils.ActivityCollector;
 
 /**
  * Created by Administrator on 2019/5/21 0021.

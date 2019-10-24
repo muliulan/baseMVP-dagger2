@@ -90,5 +90,6 @@ dependencies {
     annotationProcessor m_dependencies.butterknife_compiler
     compile m_dependencies.fastjson
     compile m_dependencies.greendao
+    compile m_dependencies.jsbridge
 
 }

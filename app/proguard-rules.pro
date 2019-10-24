@@ -75,3 +75,10 @@
 # 忽略实体
 #-keep class com.a.a.a.base.entity.**{*;}
 
+#okhttp
+-dontwarn okhttp3.**
+-keep class okhttp3.**{*;}
+
+#okio
+-dontwarn okio.**
+-keep class okio.**{*;}

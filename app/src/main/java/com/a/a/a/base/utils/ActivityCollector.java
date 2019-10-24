@@ -1,4 +1,4 @@
-package com.a.a.a.base.view.activity;
+package com.a.a.a.base.utils;
 
 import android.app.Activity;
 
